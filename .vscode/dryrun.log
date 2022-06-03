@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/imprud/projects/hillel_05_2022'
+black --check
+make: Leaving directory `/Users/imprud/projects/hillel_05_2022'
+ 
