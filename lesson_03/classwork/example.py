@@ -1,7 +1,10 @@
 # yapf
+
+
 def foo(
     number_1: int,
     number_2: str,
+    number_3: str,
 ) -> None:
     pass
 
