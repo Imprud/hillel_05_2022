@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Fri Jun  3 18:43:57 2022
+# Make data base, printed on Fri Jun 10 18:20:47 2022
 
 # Variables
 
@@ -39,7 +38,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/lc/kbyfwx5d01gccp3xrnt0m2r80000gn/T/vscode-ipc-de0d90ea-4510-4a32-9fe9-3149737e81e3.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/lc/kbyfwx5d01gccp3xrnt0m2r80000gn/T/vscode-ipc-cfb41ff7-0e97-42d8-bb94-04f1718d6127.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -51,7 +50,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.NWssaXHFSk/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.tLiZEtCQ8G/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -73,7 +72,7 @@ VSCODE_CODE_CACHE_PATH = /Users/imprud/Library/Application Support/Code/CachedDa
 # environment
 LOGNAME = imprud
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -143,7 +142,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 22523
+VSCODE_PID = 7618
 # environment
 _CE_CONDA = 
 # variable set hash-table stats:
@@ -155,9 +154,9 @@ _CE_CONDA =
 
 # Directories
 
-# . (device 16777220, inode 17954930): 14 files, no impossibilities.
+# . (device 16777220, inode 17954930): 18 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -183,7 +182,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-03 18:43:57
+#  Last modified 2022-06-03 18:53:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -200,7 +199,7 @@ check:
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
-	black --check
+	black --check ./ && isort --check-only ./ && flake8 ./	
 	
 
 # files hash-table stats:
@@ -216,7 +215,7 @@ check:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Jun  3 18:43:57 2022
+# Finished Make data base on Fri Jun 10 18:20:47 2022
 
  
 make: *** No rule to make target `all'.  Stop.

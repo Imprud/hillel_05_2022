@@ -5,3 +5,13 @@
 # venv folder
 #dasdasda
 venv/
+
+#vscode
+.vscode
+
+
+# big files
+rockyou.txt
+
+# python stuff
+__pycache__/
