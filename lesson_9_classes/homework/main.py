@@ -31,7 +31,7 @@ def main():
     p1 = Price(100, "EUR")
     p2 = Price(3300, "UAH")
     p3 = p1 + p2
-    print(p3.amount)
+    print(f"{p3.amount} {p3.currency}")
     # p4 = p1-p2
     # print(p4.amount)
 
