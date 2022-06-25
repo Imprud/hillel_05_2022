@@ -22,7 +22,7 @@ class CurrencyProcessor:
                 return result_json["result"]
 
     @classmethod
-    def convert_to_USD(cls, currency: str, amount: int | float):
+    def convert_to_USD(cls, currency: str, amount: int | float) -> int | float:
         if currency != "USD":
             amount = cls.get_currency_rate(
                 from_cur=currency, to_cur="USD", amount=amount
@@ -32,7 +32,7 @@ class CurrencyProcessor:
     @classmethod
     def convert_cur_to_cur(
         cls, from_currency: str, to_currency: str, amount: float | int
-    ):
+    ) -> int | float:
         usd_amount = cls.convert_to_USD(from_currency, amount)
         if to_currency != "USD":
             converted_currency_amount = cls.get_currency_rate(
