@@ -1,37 +1,43 @@
 import random
-from threading import Lock, Thread
+from threading import Thread
+from time import sleep
 
 lst = []
-lock = Lock()
 
 
-def rund_list() -> None:
+def rund_list() -> list[int]:
     global lst
-    with lock:
-        print(len(lst))
-        for i in range(1000000):
-            lst.append(random.randint(1, 1000))
-        print(len(lst))
+    for i in range(1000000):
+        lst.append(random.randint(1, 1000))
+    print(len(lst))
     return lst
 
 
-def list_sum(lst: list[int]) -> None:
-    with lock:
-        return sum(lst)
+def list_sum(lst: list[int]) -> int:
+    print(sum(lst))
+    return sum(lst)
 
 
-def list_avarage(lst: list[int]) -> None:
-    with lock:
-        return sum(lst) / len(lst)
+def list_avarage(lst: list[int]) -> float:
+    print(sum(lst) / len(lst))
+    return sum(lst) / len(lst)
 
 
-t1 = Thread(target=rund_list)
-t2 = Thread(target=list_sum, args=(lst,))
-t3 = Thread(target=list_avarage, args=(lst,))
+def main():
+    t1 = Thread(target=rund_list)
+    t2 = Thread(target=list_avarage, args=(lst,))
+    t3 = Thread(target=list_sum, args=(lst,))
 
-t1.start()
-t2.start()
-t3.start()
-t1.join()  # сказали сделать через лок thread lock
-t2.join()
-t3.join()
+    t1.start()
+    while t1.is_alive():
+        sleep(0.2)
+    t2.start()
+    t3.start()
+
+    t1.join()
+    t2.join()
+    t3.join()
+
+
+if __name__ == "__main__":
+    main()
